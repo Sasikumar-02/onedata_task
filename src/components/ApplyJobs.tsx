@@ -70,11 +70,15 @@ const ApplyJobs = () => {
       const handleClearForm = (resetForm:any) => {
         resetForm(); 
       };
-
+      const emailFormatRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
       const validationSchema = yup.object().shape({
         firstName: yup.string().min(2, 'First Name must be at least 2 characters').required('First Name is Required'),
         lastName: yup.string().required('Last Name is required'), 
-        email: yup.string().email('Email must be in the format: xyz@gmail.com').required('Email is required'),
+        email: yup.string().email('Email must be in the format: xyz@gmail.com').required('Email is required').test(
+          'valid-email-format',
+          'Email must be in the format: xyz@gmail.com',
+          (value) => emailFormatRegex.test(value)
+        ),
         aboutMe: yup.string().required('About Me is required').matches(/^\S.*\S$/, 'About Me cannot start or end with whitespace')
         .test('no-whitespace', 'Whitespace only is not allowed', function (value) {
             return value && value.trim() !== '' ? true : new yup.ValidationError('Whitespace only is not allowed');
