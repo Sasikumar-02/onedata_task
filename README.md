@@ -1,5 +1,8 @@
 # OneData Task
 
+## Live Demo
+  Here is the deployed link: https://onedatatask.netlify.app
+  
 ## Project Overview
 
 This is a web-based portal that allows users to see the job details and apply for the jobs and view the applications.
@@ -32,11 +35,6 @@ To install and set up the Guest Room Booking Application locally, follow these s
    ```
 
 4. Access the Client-Side and Admin-Side application at [http://localhost:3000](http://localhost:3000) in your web browser.
-
-## Contribution
-
-Contributions to the Guest Room Booking Application are welcome! If you would like to contribute, please follow the guidelines outlined in the project's repository.
-
 
 ## Contact
 
