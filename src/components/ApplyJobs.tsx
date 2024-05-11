@@ -1,16 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Input, notification, Button,
     ConfigProvider,
     Form,
     Typography,
-    Radio,
     ThemeConfig,
     } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import * as yup from 'yup';
 import { ErrorMessage, Formik, FormikHelpers } from "formik";
-import '../styles/CreateContact.css';
+import '../styles/ApplyJobs.css';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addJobs } from '../Redux/contactActions';
@@ -75,7 +74,7 @@ const ApplyJobs = () => {
       const validationSchema = yup.object().shape({
         firstName: yup.string().min(2, 'First Name must be at least 2 characters').required('First Name is Required'),
         lastName: yup.string().required('Last Name is required'), 
-        email: yup.string().email('Invalid email').required('Email is required'),
+        email: yup.string().email('Email must be in the format: xyz@gmail.com').required('Email is required'),
         aboutMe: yup.string().required('About Me is required').matches(/^\S.*\S$/, 'About Me cannot start or end with whitespace')
         .test('no-whitespace', 'Whitespace only is not allowed', function (value) {
             return value && value.trim() !== '' ? true : new yup.ValidationError('Whitespace only is not allowed');
@@ -86,7 +85,7 @@ const ApplyJobs = () => {
       });
   return (
     <ConfigProvider theme={config}>
-      <div className='createcontact-main' style={{overflow:'hidden'}}>
+      <div className='applyjobs-main' style={{overflow:'hidden'}}>
         <div className='header' style={{display:'flex', flexDirection:'column'}}>
           <div>
           <h1 style={{marginLeft:'20px'}}><ArrowLeftOutlined   style={{ marginRight: '10px' }} onClick={()=>{navigate('/jobdetails')}} />Apply Jobs</h1>
@@ -263,7 +262,7 @@ const ApplyJobs = () => {
                         htmlType="button"
                         style={{ width: "100px", height: "41px", cursor: 'pointer', marginLeft:'0px'}}
                         className="Button"
-                        id='cancel-createcontact'
+                        id='cancel-applyjobs'
                         onClick={() => handleClearForm(resetForm)}
                       >
                         Clear
