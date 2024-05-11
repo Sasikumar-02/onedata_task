@@ -212,6 +212,8 @@ const ApplyJobs = () => {
                           width: "470px",
                           borderRadius: "4px",
                           margin: "0px",
+                          backgroundColor: "#f5f5f5",
+                          cursor:'not-allowed'
                         }}
                         name="jobTitle"
                         defaultValue={jobTitle}
@@ -255,7 +257,7 @@ const ApplyJobs = () => {
                       </div>
                     </Form.Item>
                   </div>
-                  <div style={{display:'flex', marginLeft:'250px'}}>
+                  <div style={{display:'flex', marginLeft:'738px'}}>
                     <Form.Item>
                       <Button
                         htmlType="button"
