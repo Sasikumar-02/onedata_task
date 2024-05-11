@@ -19,22 +19,17 @@ This is a web-based portal that allows users to see the job details and apply fo
 
 To install and set up the Guest Room Booking Application locally, follow these steps:
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/Sasikumar-02/onedata_task
-   ```
-
-2. Install dependencies:
+1. Install dependencies:
    ```
    npm install
    ```
 
-3. Start the development server:
+2. Start the development server:
    ```
    npm start
    ```
 
-4. Access the Client-Side and Admin-Side application at [http://localhost:3000](http://localhost:3000) in your web browser.
+3. Access the Client-Side and Admin-Side application at [http://localhost:3000](http://localhost:3000) in your web browser.
 
 ## Contact
 
